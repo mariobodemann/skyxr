@@ -86,7 +86,6 @@ fun SpatialContent(
 
                             val x = normalizedAngleCos(angle / 360f) * postRadius
                             val z = normalizedAngleSin(angle / 360f) * postRadius
-
                             val y = (index / postsPerRound) * (postHeight + postPadding)
 
                             val post = posts[index]
