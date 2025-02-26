@@ -22,10 +22,6 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
 
-      - name: Create Release Notes
-        run: |
-          echo "release_body='fancy release body'" >> "$GITHUB_ENV"
-
       - name: Assemble Debug APK
         run: ./gradlew assembleDebug
 
@@ -43,7 +39,7 @@ jobs:
         with:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref_name }}
-          body: ${{ env.release_body }}
+          body: A release that happened
 
       - name: Upload Release APK
         uses: actions/upload-release-asset@v1
