@@ -24,11 +24,7 @@ jobs:
 
       - name: Create Release Notes
         run: |
-          {
-            echo "release_body<<__EOF__"
-            echo "FANCY RELEASE NOTES"
-            echo "__EOF__"
-          } >> "$GITHUB_ENV"
+          echo "release_body='fancy release body'" >> "$GITHUB_ENV"
 
       - name: Assemble Debug APK
         run: ./gradlew assembleDebug
